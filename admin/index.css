@@ -11,7 +11,7 @@ main {
     margin-top: 16px;
 }
 
-label, input, textarea {
+label, input, textarea#memo {
     font-size: 1.6rem;
 }
 
@@ -32,4 +32,8 @@ textarea#memo {
     color: #c00;
     font-weight: bold;
     display: none;
+}
+textarea#status {
+    height: 10em;
+    border: none;
 }

@@ -1,4 +1,14 @@
 const token = localStorage.getItem("token");
+let status;
+
+const displayDateTime = (date) => {
+  const zeroPadding = (str) => ("0" + str).slice(-2);
+  return `${zeroPadding(date.getMonth() + 1)}/${zeroPadding(
+    date.getDate()
+  )} ${zeroPadding(date.getHours())}:${zeroPadding(
+    date.getMinutes()
+  )}:${zeroPadding(date.getSeconds())}`;
+};
 
 const onClick = async () => {
   try {
@@ -22,12 +32,21 @@ const onClick = async () => {
       body: JSON.stringify(data),
     });
 
-    if (response.status === 401) {
-      alert("認証エラーです");
-    } else if (!response.ok) {
-      alert("内部エラー（バックエンド）です");
+    if (response.ok) {
+      const json = await response.json();
+      status.value =
+        `No. ${json.times} ／ ${json.price} 円 × ${
+          json.count
+        } 個 ／ ${displayDateTime(new Date())}\n` + status.value;
+    } else {
+      if (response.status === 401) {
+        alert("認証エラーです");
+      } else {
+        alert("内部エラー（バックエンド）です");
+      }
     }
-  } catch {
+  } catch (e) {
+    console.log(e);
     alert("内部エラー（フロントエンド）です");
   }
 };
@@ -36,6 +55,7 @@ window.addEventListener("load", async () => {
   const button = document.getElementById("button");
   const now = document.getElementById("now");
   const tokenUnregistered = document.getElementById("token-unregistered");
+  status = document.getElementById("status");
 
   button.addEventListener("click", onClick);
 
@@ -43,14 +63,9 @@ window.addEventListener("load", async () => {
     tokenUnregistered.style.display = "block";
   }
 
+  // 時刻の更新
   const time = () => {
-    const date = new Date();
-    const zeroPadding = (str) => ("0" + str).slice(-2);
-    now.innerHTML = `${zeroPadding(date.getMonth() + 1)}月${zeroPadding(
-      date.getDate()
-    )}日  ${zeroPadding(date.getHours())}時${zeroPadding(
-      date.getMinutes()
-    )}分${zeroPadding(date.getSeconds())}秒`;
+    now.innerHTML = displayDateTime(new Date());
   };
   setInterval(time, 500);
 });
