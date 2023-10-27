@@ -1,13 +1,3 @@
-document.body.addEventListener("contextmenu", (e) => {
-  e.preventDefault();
-  alert("右クリックは禁止です!!");
-});
-
-document.body.addEventListener("copy", (e) => {
-  e.preventDefault();
-  alert("コピーも禁止です!!");
-});
-
 const fetchAccessCounter = async () => {
   const url = "https://renbai-counter.yokohama.dev/";
   const request = await fetch(url);
@@ -25,4 +15,14 @@ window.addEventListener("load", async () => {
     img.src = `digits/${digit}.gif`;
     span.appendChild(img);
   }
+
+  document.body.addEventListener("contextmenu", (e) => {
+    e.preventDefault();
+    alert("右クリックは禁止です!!");
+  });
+
+  document.body.addEventListener("copy", (e) => {
+    e.preventDefault();
+    alert("コピーも禁止です!!");
+  });
 });

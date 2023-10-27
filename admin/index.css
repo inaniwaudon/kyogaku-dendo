@@ -1,0 +1,39 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    margin: 8px 32px;
+}
+
+.box {
+    margin-top: 16px;
+}
+
+label, input, textarea#memo {
+    font-size: 1.6rem;
+}
+
+input, textarea {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input, textarea#memo {
+    padding: 8px;
+}
+
+textarea#memo {
+    height: 2em;
+}
+
+#token-unregistered {
+    color: #c00;
+    font-weight: bold;
+    display: none;
+}
+textarea#status {
+    height: 10em;
+    border: none;
+}

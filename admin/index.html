@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>売上登録</title>
+    <meta charset="utf-8 "/>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link href="index.css" rel="stylesheet" />
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <main>
+      <h1>売上登録</h1>
+      <p>現在時刻 <time id="now"></time></p>
+      <p id="token-unregistered">トークンが未登録です</p>
+      <form>
+        <div class="box">
+          <label for="price">金額</label>
+          <input type="number" value="150" min="0" id="price" />
+        </div>
+        <div class="box">
+          <label for="count">個数</label>
+          <input type="number" value="1" min="1" id="count" />
+        </div>
+        <div class="box">
+          <label for="memo">メモ（あれば）</label><br/>
+          <textarea id="memo"></textarea>
+        </div>
+        <div class="box">
+          <input type="button" value="送信（連打禁止）" id="button" />
+        </div>
+        <div class="box">
+          <textarea readonly id="status"></textarea>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>
