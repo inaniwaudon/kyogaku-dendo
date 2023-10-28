@@ -33,9 +33,9 @@ const displayAccessCounter = async () => {
 const displayNavigation = () => {
   const navHtml = `<h2>驚額の殿堂</h2>
 <ul>
-  <li><a href="/">トップ</a></li>
+  <li><a href="index.html">トップ</a></li>
   <li><a href="/maps">地図</a></li>
-  <li><a href="/poster">ポスター</a></li>
+  <li><a href="poster.html">ポスター</a></li>
   <li>んぽたその部屋（工事中）</li>
 </ul>
 <a href="https://sites.google.com/view/happy-busy/">
