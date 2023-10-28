@@ -5,7 +5,7 @@
 html, body {
   width: 100%;
   margin: 0;
-  background: url("haikei.gif");
+  background: url("img/haikei.gif");
   background-size: 40px;
   display: flex;
 }
