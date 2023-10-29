@@ -8,21 +8,110 @@
     <meta name="keywords" content="雙峰祭, やきそば, 驚額の殿堂">
     <link href="./style.css" rel="stylesheet">
     <script src="./script.js"></script>
+    <style>
+      #marquee {
+        overflow: hidden;
+      }
+
+      #marquee .text {
+        transform: translateX(100%);
+        animation: marquee 20s linear infinite;
+      }
+
+      @keyframes marquee {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+
+      #access-counter {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #access-counter-no {
+        margin: 0 4px;
+      }
+
+      #menu-head {
+        margin-bottom: 8px;
+      }
+
+      #place {
+        line-height: 1.3;
+        color: #f00;
+        font-size: 24px;
+        font-style: italic;
+        word-break: keep-all;
+      }
+
+      #price {
+        margin-bottom: 8px;
+      }
+
+      #price strong {
+        font-size: 36px;
+        display: inline-block;
+        animation: blink 1s infinite;
+      }
+
+      @keyframes blink {
+        0% {
+          color: #f00;
+          background: #ff0;
+        }
+        49% {
+          color: #f00;
+          background: #ff0;
+        }
+        50% {
+          color: #ff0;
+          background: #f00;
+        }
+        100% {
+          color: #ff0;
+          background: #f00;
+        }
+      }
+
+      #link-list {
+        display: flex;
+        gap: 4px;
+        justify-content: center;
+      }
+
+      #link-list li {
+        list-style: none;
+      }
+
+      .link {
+        height: 32px;
+        line-height: 32px;
+        color: #ff0;
+        padding: 0 8px;
+        list-style: none;
+        border: inset 5px #f6c;
+        background: #f0c;
+        display: block;
+      }
+
+      .link:hover {
+        border: inset 5px #fff;
+      }
+
+      #copyright {
+        color: #093;
+      }
+    </style>
   </head>
   <body>
-    <!-- ナビゲーション ここから-->
-    <nav id="nav">
-      <h2>驚額の殿堂</h2>
-      <ul>
-        <li><a href="/">トップ</a></li>
-        <li><a href="/maps">地図</a></li>
-        <li>ポスター（工事中）</li>
-        <li>んぽたその部屋（工事中）</li>
-      </ul>
-      <a href="https://sites.google.com/view/happy-busy/">
-        <img src="jikan.webp" alt="時間ねぇー" />
-      </a>
-    </nav>
+    <!-- ナビゲーション ここから -->
+    <nav id="nav"></nav>
+    <!-- ナビゲーション ここまで -->
     <!-- メインここから -->
     <main>
       <header>
@@ -37,7 +126,7 @@
           <!-- アクセスカウンターここまで -->
           番目の来訪者です。キリ番踏み逃げ禁止！
           <a href="https://itest.5ch.net/">
-            <img src="bbs.gif" height="24px" alt="掲示板"/>
+            <img src="img/index/bbs.gif" height="24px" alt="掲示板"/>
           </a>
         </p>
         <p>Since 2023/10/10</p>
@@ -64,9 +153,14 @@
         </p>
       </section>
       <section id="menu">
-        <h2 id="menu-head"><img src="menu.gif" alt="メニュー" /></h2>
-        <p id="price"><strong>やきそば １５０円</strong></p>
-        <img src="yakisoba.gif" alt="鉄板で焼かれるやきそば" />        
+        <h2 id="menu-head"><img src="img/index/menu.gif" alt="メニュー" /></h2>
+        <p id="price">
+          <strong>やきそば １５０円</strong><br/>
+        </p>
+        <p><a href="genka.html">↑↑↑ ★原価を公開しました★</a></p>
+        <figure>
+          <img src="img/index/yakisoba.gif" alt="鉄板で焼かれるやきそば" />
+        </figure>
       </section>
       <section id="links">
         <h2>リンク集</h2>
