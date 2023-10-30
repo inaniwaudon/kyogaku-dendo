@@ -1,3 +1,5 @@
+const IS_DEVELOPMENT = false;
+
 const token = localStorage.getItem("token");
 let status;
 
@@ -21,7 +23,9 @@ const onClick = async () => {
       return;
     }
 
-    const url = "http://localhost:8787/order";
+    const url = IS_DEVELOPMENT
+      ? "http://localhost:8787/order"
+      : "https://renbai-counter.yokohama.dev/order";
     const data = { price, count, memo };
     const response = await fetch(url, {
       method: "POST",

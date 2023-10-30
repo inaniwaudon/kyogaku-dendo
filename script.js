@@ -1,6 +1,6 @@
 // アクセスカウンタのフェッチ
 const fetchAccessCounter = async () => {
-  const url = "https://renbai-counter.yokohama.dev/";
+  const url = "https://renbai-counter.yokohama.dev/counter";
   try {
     const request = await fetch(url);
     return (await request.json()).count;
@@ -36,8 +36,9 @@ const displayNavigation = () => {
   <li><a href="index.html">トップ</a></li>
   <li><a href="genka.html">原価</a></li>
   <li><a href="poster.html">ポスター</a></li>
+  <li><a href="heya.html">んぽたその部屋</a></li>
   <li><a href="/maps">地図</a></li>
-  <li>んぽたその部屋（工事中）</li>
+  <li>レポート（工事中）</li>
 </ul>
 <a href="https://sites.google.com/view/happy-busy/">
   <img src="img/jikan.webp" alt="時間ねぇー" />
