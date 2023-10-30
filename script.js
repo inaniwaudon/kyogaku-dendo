@@ -1,6 +1,6 @@
 // アクセスカウンタのフェッチ
 const fetchAccessCounter = async () => {
-  const url = "https://renbai-counter.yokohama.dev/";
+  const url = "https://renbai-counter.yokohama.dev/counter";
   try {
     const request = await fetch(url);
     return (await request.json()).count;
