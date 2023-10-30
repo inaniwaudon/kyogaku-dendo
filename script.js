@@ -22,7 +22,6 @@ const displayAccessCounter = async () => {
   const countStr = ("00000" + count).slice(-6);
   for (let i = 0; i < 6; i++) {
     const digit = countStr[i];
-    console.log(digit);
     const img = document.createElement("img");
     img.src = `img/digits/${digit}.gif`;
     span.appendChild(img);
