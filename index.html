@@ -96,7 +96,7 @@
         list-style: none;
         border: inset 5px #f6c;
         background: #f0c;
-        display: block;
+        display: inline-block;
       }
 
       .link:hover {
@@ -106,7 +106,48 @@
       #copyright {
         color: #093;
       }
+
+      #enter {
+        width: 100vw;
+        height: 100vh;
+        font-size: 36px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: url("img/haikei.gif");
+      }
+
+      #enter h1 {
+        font-size: 36px;
+      }
+
+      #enter-link {
+        color: #00f;
+        text-decoration: underline;
+      }
+
+      #enter-link:hover {
+        color: #f63;
+      }
     </style>
+    <script>
+      window.addEventListener("load", () => {
+        const audio = document.createElement("audio");
+        audio.src = "img/bgm.mp3";
+        audio.loop = true;
+        document.body.appendChild(audio);
+
+        const enter = document.getElementById("enter");
+        enter.addEventListener("click", () => {
+          enter.remove();
+          audio.play();
+        });
+      });
+    </script>
   </head>
   <body>
     <!-- ナビゲーション ここから -->
@@ -178,5 +219,9 @@
         <p>やきそばマイスター – <a href="https://yahoo.jp/">EXIT</a></p>        
       </footer>
     </main>
+    <div id="enter">
+      <h1><i>Welcome to 驚額の殿堂</i></h1>
+      <p><i><a class="link" style="padding: 8px">ENTER</a></i></p>
+    </div>
   </body>
 </html>
