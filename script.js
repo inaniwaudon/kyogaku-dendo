@@ -9,13 +9,15 @@ const fetchAccessCounter = async () => {
   }
 };
 
-// トップページのみ、アクセスカウンタを表示
+// アクセスカウンタの計測 & 表示
 const displayAccessCounter = async () => {
+  let count = await fetchAccessCounter();
+
+  // トップページのみ表示
   const span = document.querySelector("#access-counter-no");
   if (!span) {
     return;
   }
-  let count = await fetchAccessCounter();
   if (count === null) {
     count = 0;
   }
