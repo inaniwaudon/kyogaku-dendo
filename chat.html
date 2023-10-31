@@ -1,0 +1,91 @@
+
+<!doctype html>
+<html>
+  <head>
+    <title>んぽとおはなしするんぽ〜〜</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="人間系学系棟前の石の広場で、圧倒的な低価格で美味しい焼きそばを提供します！" />
+    <meta name="keywords" content="雙峰祭, やきそば, 驚額の殿堂">
+    <link href="./style.css" rel="stylesheet">
+    <script src="./script.js"></script>
+    <style>
+      #chat {
+        max-width: 600px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .request {
+        color: #f00;
+        padding: 8px;
+        border-radius: 8px;
+        background: #0f3;
+      }
+
+      .response {
+        padding: 8px;
+        border-radius: 8px;
+        background: #fff;
+      }
+
+      #form {
+        margin-top: 8px;
+      }
+
+      input {
+        padding: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ナビゲーション ここから -->
+    <nav id="nav"></nav>
+    <!-- ナビゲーション ここまで -->
+    <!-- メインここから -->
+    <main>
+      <h1>んぽとおはなしするんぽ〜〜</h1>
+      <div id="chat">
+      </div>
+      <form id="form">
+        <input type="text" placeholder="なんでも聞くんぽね！" id="text"/>
+        <input type="submit" />
+      </form>
+    </main>
+    <script>
+      window.onload = () => {
+        const chat = document.getElementById("chat");
+        const form = document.getElementById("form");
+        const text = document.getElementById("text");
+
+        form.addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const requestDiv = document.createElement("div");
+          requestDiv.innerHTML = `Q. ${text.value}`;
+          requestDiv.className = "request";
+          chat.appendChild(requestDiv)
+          
+          let responseText;
+          try {
+            const response = await fetch("https://renbai-counter.yokohama.dev/gpt", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ message: text.value }),
+            });
+            const responseJson = await response.json();
+            responseText = `A. ${responseJson.answer}`;
+          } catch {
+            responseText = "A. エラーになってしまったんぽ"
+          }
+          const responseDiv = document.createElement("div");
+          responseDiv.innerHTML = responseText;
+          responseDiv.className = "response";
+          chat.appendChild(responseDiv);
+        })
+      };
+    </script>
+  </body>
+</html>
