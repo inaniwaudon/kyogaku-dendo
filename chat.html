@@ -50,7 +50,7 @@
       </div>
       <form id="form">
         <input type="text" placeholder="なんでも聞くんぽね！" id="text"/>
-        <input type="submit" />
+        <input type="submit" id="submit"/>
       </form>
     </main>
     <script>
@@ -58,6 +58,11 @@
         const chat = document.getElementById("chat");
         const form = document.getElementById("form");
         const text = document.getElementById("text");
+        const submit = document.getElementById("submit");
+
+        text.addEventListener("keyup", (e) => {
+          submit.disabled = e.currentTarget.value.length === 0;
+        });
 
         form.addEventListener("submit", async (e) => {
           e.preventDefault();
@@ -84,6 +89,8 @@
           responseDiv.textContent = responseText;
           responseDiv.className = "response";
           chat.appendChild(responseDiv);
+
+          text.value = "";
         })
       };
     </script>
