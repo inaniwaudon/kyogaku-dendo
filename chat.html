@@ -62,7 +62,7 @@
         form.addEventListener("submit", async (e) => {
           e.preventDefault();
           const requestDiv = document.createElement("div");
-          requestDiv.innerHTML = `Q. ${text.value}`;
+          requestDiv.textContent = `Q. ${text.value}`;
           requestDiv.className = "request";
           chat.appendChild(requestDiv)
           
@@ -81,7 +81,7 @@
             responseText = "A. エラーになってしまったんぽ"
           }
           const responseDiv = document.createElement("div");
-          responseDiv.innerHTML = responseText;
+          responseDiv.textContent = responseText;
           responseDiv.className = "response";
           chat.appendChild(responseDiv);
         })
