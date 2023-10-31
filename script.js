@@ -36,6 +36,7 @@ const displayNavigation = () => {
   <li><a href="genka.html">原価</a></li>
   <li><a href="poster.html">ポスター</a></li>
   <li><a href="heya.html">んぽたその部屋</a></li>
+  <li><a href="chat.html">んぽとおはなしするんぽ〜〜</a></li>
   <li><a href="/maps">地図</a></li>
   <li>レポート（工事中）</li>
 </ul>
