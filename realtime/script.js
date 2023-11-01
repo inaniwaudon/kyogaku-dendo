@@ -1,7 +1,7 @@
 let textImage;
 let npotasoImage;
 let cupImage;
-let noImages;
+let noImages = [];
 
 // 画像読み込み
 const loadImage = (src) =>
@@ -137,22 +137,35 @@ const update = async () => {
 
 window.addEventListener("load", async () => {
   // 画像読み込み
-  textImage = await loadImage("../img/realtime/text.webp");
-  cupImage = await loadImage("../img/realtime/cup.webp");
-  npotasoImage = await loadImage("../img/realtime/npotaso.webp");
-
-  noImages = [
-    await loadImage("../img/realtime/0.webp"),
-    await loadImage("../img/realtime/1.webp"),
-    await loadImage("../img/realtime/2.webp"),
-    await loadImage("../img/realtime/3.webp"),
-    await loadImage("../img/realtime/4.webp"),
-    await loadImage("../img/realtime/5.webp"),
-    await loadImage("../img/realtime/6.webp"),
-    await loadImage("../img/realtime/7.webp"),
-    await loadImage("../img/realtime/8.webp"),
-    await loadImage("../img/realtime/9.webp"),
-  ];
+  [
+    textImage,
+    cupImage,
+    npotasoImage,
+    noImages[0],
+    noImages[1],
+    noImages[2],
+    noImages[3],
+    noImages[4],
+    noImages[5],
+    noImages[6],
+    noImages[7],
+    noImages[8],
+    noImages[9],
+  ] = await Promise.all([
+    loadImage("../img/realtime/text.webp"),
+    loadImage("../img/realtime/cup.webp"),
+    loadImage("../img/realtime/npotaso.webp"),
+    loadImage("../img/realtime/0.webp"),
+    loadImage("../img/realtime/1.webp"),
+    loadImage("../img/realtime/2.webp"),
+    loadImage("../img/realtime/3.webp"),
+    loadImage("../img/realtime/4.webp"),
+    loadImage("../img/realtime/5.webp"),
+    loadImage("../img/realtime/6.webp"),
+    loadImage("../img/realtime/7.webp"),
+    loadImage("../img/realtime/8.webp"),
+    loadImage("../img/realtime/9.webp"),
+  ]);
 
   // 画面更新
   update();
