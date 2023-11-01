@@ -15,12 +15,12 @@ label, input, textarea#memo {
     font-size: 1.6rem;
 }
 
-input, textarea {
+input[type="number"], textarea {
     width: 100%;
     box-sizing: border-box;
 }
 
-input, textarea#memo {
+input[type="number"], textarea#memo {
     padding: 8px;
 }
 
