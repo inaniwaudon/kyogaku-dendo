@@ -15,8 +15,10 @@ const displayDateTime = (date) => {
 const onClick = async () => {
   try {
     const price = parseInt(document.getElementById("price").value);
-    const count = parseInt(document.getElementById("count").value);
+    const deletes = document.getElementById("delete").checked;
+    const originalCount = parseInt(document.getElementById("count").value);
     const memo = document.getElementById("memo").value;
+    const count = originalCount * (deletes ? -1 : 1);
 
     if (!token) {
       alert("トークンが登録されていません");
