@@ -40,6 +40,7 @@ const displayNavigation = () => {
   <li><a href="heya.html">んぽたその部屋</a></li>
   <li><a href="chat.html">んぽとおはなしするんぽ〜〜</a></li>
   <li><a href="/maps">地図</a></li>
+  <li><a href="kiyaku.html">んぽからのお願い</a></li>
   <li>レポート（工事中）</li>
 </ul>
 <a href="https://sites.google.com/view/happy-busy/">
