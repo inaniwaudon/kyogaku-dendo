@@ -117,7 +117,7 @@ const drawImage = async (current, left, ratio) => {
 };
 
 const update = async () => {
-  const url = "https://renbai-counter.yokohama.dev/order";
+  const url = "https://kyogaku-order-vercel.vercel.app/order";
   const response = await fetch(url);
   const json = await response.json();
 

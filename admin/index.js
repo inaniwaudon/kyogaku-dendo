@@ -27,7 +27,7 @@ const onClick = async () => {
 
     const url = IS_DEVELOPMENT
       ? "http://localhost:8787/order"
-      : "https://renbai-counter.yokohama.dev/order";
+      : "https://kyogaku-order-vercel.vercel.app/order";
     const data = { price, count, memo };
     const response = await fetch(url, {
       method: "POST",
