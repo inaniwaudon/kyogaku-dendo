@@ -39,11 +39,9 @@ const onClick = async () => {
     });
 
     if (response.ok) {
-      const json = await response.json();
-      status.value =
-        `No. ${json.times} ／ ${json.price} 円 × ${
-          json.count
-        } 個 ／ ${displayDateTime(new Date())}\n` + status.value;
+      status.value = `${price} 円 × ${count} 個 ／ ${displayDateTime(
+        new Date()
+      )}\n`;
     } else {
       if (response.status === 401) {
         alert("認証エラーです");
