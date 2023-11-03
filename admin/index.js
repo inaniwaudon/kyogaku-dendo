@@ -28,12 +28,11 @@ const onClick = async () => {
     const url = IS_DEVELOPMENT
       ? "http://localhost:8787/order"
       : "https://kyogaku-order-vercel.vercel.app/order";
-    const data = { price, count, memo };
+    const data = { price, count, memo, apiKey: token };
     const response = await fetch(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "api-key": token,
       },
       body: JSON.stringify(data),
     });
