@@ -37,10 +37,11 @@ const displayNavigation = () => {
   <li><a href="index.html">トップ</a></li>
   <li><a href="genka.html">原価</a></li>
   <li><a href="poster.html">ポスター</a></li>
+  <li><a href="kiyaku.html">んぽからのお願い</a></li>
+  <li><a href="kiyaku.html">現在の売上</a></li>
   <li><a href="heya.html">んぽたその部屋</a></li>
   <li><a href="chat.html">んぽとおはなしするんぽ〜〜</a></li>
   <li><a href="/maps">地図</a></li>
-  <li><a href="kiyaku.html">んぽからのお願い</a></li>
   <li>レポート（工事中）</li>
 </ul>
 <a href="https://sites.google.com/view/happy-busy/">
