@@ -39,9 +39,9 @@ const onClick = async () => {
     });
 
     if (response.ok) {
-      status.value = `${price} 円 × ${count} 個 ／ ${displayDateTime(
-        new Date()
-      )}\n`;
+      status.value =
+        `${price} 円 × ${count} 個 ／ ${displayDateTime(new Date())}\n` +
+        status.value;
     } else {
       if (response.status === 401) {
         alert("認証エラーです");
