@@ -175,4 +175,6 @@ window.addEventListener("load", async () => {
     const interval = parseFloat(searchParams.get("interval"));
     setInterval(update, 1000 * interval);
   }
+
+  await fetchAccessCounter();
 });
