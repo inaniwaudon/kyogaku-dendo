@@ -1,0 +1,110 @@
+
+<!doctype html>
+<html>
+  <head>
+    <title>当日の写真</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="人間系学系棟前の石の広場で、圧倒的な低価格で美味しい焼きそばを提供します！" />
+    <meta name="keywords" content="雙峰祭, やきそば, 驚額の殿堂">
+    <link href="./style.css" rel="stylesheet">
+    <script src="./script.js"></script>
+    <style>
+      #photo-wrapper {
+        width: 80%;
+        margin: auto;
+        columns: 3;
+        gap: 12px;
+      }
+
+      .photo + .photo {
+        margin-top: 12px;
+      }
+
+      .photo img {
+        width: 100%;
+        height: auto;
+      }
+    </style>
+    <script>
+      window.addEventListener("load", () => {
+        const audio = document.createElement("audio");
+        audio.src = "img/bgm.mp3";
+        audio.loop = true;
+        document.body.appendChild(audio);
+
+        const enter = document.getElementById("enter");
+        enter.addEventListener("click", () => {
+          enter.remove();
+          audio.play();
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <!-- ナビゲーション ここから -->
+    <nav id="nav"></nav>
+    <!-- ナビゲーション ここまで -->
+    <!-- メインここから -->
+    <main>
+      <h1>当日の写真</h1>
+      <div id="photo-wrapper">
+        <div class="photo">
+          <img src="img/photo/0.webp" />
+        </div><!--
+        --><div class="photo">
+          <img src="img/photo/1.webp" />
+        </div><!--
+        --><div class="photo">
+          <img src="img/photo/2.webp" />
+        </div><!--
+        --><div class="photo">
+          <img src="img/photo/3.webp" />
+        </div><!--
+        --><div class="photo">
+          <img src="img/photo/4.webp" />
+        </div><!--
+        --><div class="photo">
+          <img src="img/photo/5.webp" />
+        </div><!--
+        --><div class="photo">
+          <img src="img/photo/6.webp" />
+        </div><!--
+        --><div class="photo">
+          <img src="img/photo/7.webp" />
+        </div><!--
+        --><div class="photo">
+          <img src="img/photo/8.webp" />
+        </div><!--
+        --><div class="photo">
+          <img src="img/photo/9.webp" />
+        </div><!--
+        --><div class="photo">
+          <img src="img/photo/10.webp" />
+        </div><!--
+        --><div class="photo">
+          <img src="img/photo/11.webp" />
+        </div><!--
+        --><div class="photo">
+          <img src="img/photo/12.webp" />
+        </div><!--
+        --><div class="photo">
+          <img src="img/photo/13.webp" />
+        </div><!--
+        --><div class="photo">
+          <img src="img/photo/14.webp" />
+        </div><!--
+        --><div class="photo">
+          <img src="img/photo/15.webp" />
+        </div><!--
+        --><div class="photo">
+          <img src="img/photo/16.webp" />
+        </div><!--
+        --><div class="photo">
+          <img src="img/photo/17.webp" />
+        </div><!--
+        --><div class="photo">
+          <img src="img/photo/18.webp" />
+        </div>
+    </main>
+  </body>
+</html>
