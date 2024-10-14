@@ -366,7 +366,49 @@
         color: #093;
       }
 
+      #enter {
+        width: 100vw;
+        height: 100vh;
+        font-size: 36px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 8px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+        background: #000;
+      }
+
+      #enter h1 {
+        font-size: 36px;
+      }
+
+      #enter-link {
+        color: yellow;
+        text-decoration: underline;
+      }
+
+      #enter-link:hover {
+        color: #f63;
+      }
     </style>
+    <script>
+      window.addEventListener("load", () => {
+        const audio = document.createElement("audio");
+        audio.src = "img/frankfurt-bgm.mp3";
+        audio.loop = true;
+        document.body.appendChild(audio);
+
+        const enter = document.getElementById("enter");
+        enter.addEventListener("click", () => {
+          enter.remove();
+          audio.play();
+        });
+      });
+    </script>
   </head>
   <body>
     <div id="wrapper">
@@ -490,5 +532,12 @@
       </footer>
       <!-- フッタここまで -->
     </div>
+
+    <!-- エンターここから -->
+    <div id="enter">
+      <h1><i>Welcome to 驚額の殿堂 2（ツー）</i></h1>
+      <p><i><a id="enter-link" style="padding: 8px">ENTER</a></i></p>
+    </div>
+    <!-- エンターここまで -->
   </body>
 </html>
