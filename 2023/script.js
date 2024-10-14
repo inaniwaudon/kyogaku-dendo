@@ -30,33 +30,41 @@ const displayAccessCounter = async () => {
   }
 };
 
-let i = 0;
-let first = true;
-
-const animateChars = () => {
-  const chars = document.querySelectorAll(".char");
-  if (!first) {
-    const before = i - 1 >= 0 ? i - 1 : chars.length - 1;
-    chars[before].classList.toggle("impact");
-  }
-  chars[i].classList.toggle("impact");
-  i = i + 1 < chars.length ? i + 1 : 0;
-  first = false;
-  setTimeout(animateChars, 100);
+// 共通ナビゲーションの表示
+const displayNavigation = () => {
+  const navHtml = `<h2>驚額の殿堂</h2>
+<ul>
+  <li><a href="index.html">トップ</a></li>
+  <li><a href="genka.html">原価</a></li>
+  <li><a href="poster.html">ポスター</a></li>
+  <li><a href="realtime/index.html">現在の売上</a></li>
+  <li><a href="maps">地図</a></li>
+  <hr />
+  <li><a href="kiyaku.html">んぽからのお願い</a></li>
+  <li><a href="heya.html">んぽたその部屋</a></li>
+  <li><a href="chat.html">んぽとおはなしするんぽ〜〜</a></li>
+  <hr />
+  <li><a href="photo.html">当日の写真</a></li>
+  <li>レポート（工事中）</li>
+</ul>
+<a href="https://sites.google.com/view/happy-busy/">
+  <img src="img/jikan.webp" alt="時間ねぇー" />
+</a>`;
+  const nav = document.getElementById("nav");
+  nav.innerHTML = navHtml;
 };
 
 window.addEventListener("load", async () => {
   displayAccessCounter();
+  displayNavigation();
 
   // 右クリック・コピーの禁止
-  /*document.body.addEventListener("contextmenu", (e) => {
+  document.body.addEventListener("contextmenu", (e) => {
     e.preventDefault();
     alert("右クリックは禁止です!!");
   });
   document.body.addEventListener("copy", (e) => {
     e.preventDefault();
     alert("コピーも禁止です!!");
-  });*/
-
-  animateChars();
+  });
 });

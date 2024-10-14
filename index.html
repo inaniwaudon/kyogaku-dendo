@@ -1,257 +1,494 @@
-
 <!doctype html>
 <html>
   <head>
-    <title>Welcome to 驚額の殿堂</title>
+    <title>Welcome to 驚額の殿堂2（ツー）</title>
     <meta charset="utf-8" />
-    <meta name="description" content="人間系学系棟前の石の広場で、圧倒的な低価格で美味しい焼きそばを提供します！" />
-    <meta name="keywords" content="雙峰祭, やきそば, 驚額の殿堂">
+    <meta name="description" content="人間系学系棟前で、圧倒的な低価格で美味しいフランクフルトを提供します！" />
+    <meta name="keywords" content="雙峰祭, フランクフルト, 驚額の殿堂">
+    <meta name="viewport" content="width=700">
     <link href="./style.css" rel="stylesheet">
     <script src="./script.js"></script>
     <style>
       #marquee {
+        color: cyan;
+        margin-bottom: 8px;
         overflow: hidden;
       }
 
       #marquee .text {
-        transform: translateX(100%);
+        width: 110em;
+        transform: translateX(50%);
         animation: marquee 20s linear infinite;
       }
 
       @keyframes marquee {
         0% {
-          transform: translateX(100%);
+          transform: translateX(50%);
         }
         100% {
           transform: translateX(-100%);
         }
       }
 
-      #access-counter {
+      #top {
         display: flex;
+        align-items:stretch;
+        gap: 12px;
+      }
+
+      #figure {
+        flex: 440px 0 0;
+        filter: blur(0.6px);
+        margin: 0;
+        position: relative;
+      }
+
+      #figure img {
+        width: 100%;
+      }
+
+      #figure .sub, #figure .main {
+        font-size: 3em;
+        font-weight: bold;
+        text-shadow: -2px 0 0 #000, 2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000;
+        position: absolute;
+      }
+
+      #figure .sub {
+        color: red;
+        right: 16px;
+        top: 12px;
+        animation: biglarge steps(3, end) 1s infinite;
+      }
+
+      #figure .main {
+        color: limegreen;
+        left: 16px;       
+        bottom: 12px;
+        animation: largebig steps(3, end) 1s infinite;
+      }
+
+      @keyframes biglarge {
+        0% {
+          font-size: 4em;
+        }
+        50% {
+          font-size: 1.5em;
+        }
+        100% {
+          font-size: 4em;
+        }
+      }
+
+      @keyframes largebig {
+        0% {
+          font-size: 1.5em;
+        }
+        50% {
+          font-size: 4.5em;
+        }
+        100% {
+          font-size: 1.5em;
+        }
+      }
+      
+      #links {
+        flex: 110px 0 0;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      #links a {
+        color: yellow;
+        text-shadow: -2px 0 0 #000, 2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000;
+        text-align: center;
+        text-decoration: none;
+        font-size: 1.2em;
+        font-family: "JFドットAyu明朝18";
+        list-style: none;
+        padding: 0 8px;
+        border-top-left-radius: 20px 32px;
+        border-top-right-radius: 20px 32px;
+        border-bottom-left-radius: 20px 32px;
+        border-bottom-right-radius: 20px 32px;
+        filter: blur(0.4px);
+        display: flex;
+        flex-grow: 1;
         align-items: center;
         justify-content: center;
+        border: solid 4px #f6c;
+        box-shadow: 0 0 6px 1px #f6c;
+        background: rgba(255, 0, 204, 0.4);
       }
 
-      #access-counter-no {
-        margin: 0 4px;
+      #links a:hover {
+        filter: invert();
       }
 
-      #menu-head {
-        margin-bottom: 8px;
+      #links a:nth-child(1) {
+        border: solid 4px blue;
+        box-shadow: 0 0 6px 1px blue;
+        background: rgba(0, 0, 255, 0.4);
       }
 
-      #place {
-        line-height: 1.3;
-        color: #f00;
-        font-size: 24px;
-        font-style: italic;
-        word-break: keep-all;
+      #links a:nth-child(2) {
+        border: solid 4px yellow;
+        box-shadow: 0 0 6px 1px yellow;
+        background: rgba(255, 255, 0, 0.4);
       }
 
-      #grandprix {
-        margin-top: 16px;
-        font-size: 20px;
-        display: block;
+      #links a:nth-child(3) {
+        border: solid 4px cyan;
+        box-shadow: 0 0 6px 1px cyan;
+        background: rgba(0, 255, 255, 0.4);
       }
 
-      #price {
-        margin-bottom: 8px;
+      #links a:nth-child(4) {
+        border: solid 4px limegreen;
+        box-shadow: 0 0 6px 1px limegreen;
+        background: rgba(50, 205, 50, 0.4);
       }
 
-      #price strong {
-        font-size: 36px;
-        display: inline-block;
-        animation: blink 1s infinite;
+      #links a.disabled {
+        color: #999;
+        border: solid 4px #666;
+        box-shadow: 0 0 6px 1px #666;
+        background: rgb(102, 102, 102, 0.4)
+      }
+
+      #links a.disabled:hover {
+        filter: none;
+      }
+
+      #sub {
+        color: red;
+        flex-shrink: 1;
+        word-break: break-all;
+      }
+
+      #tora {
+        margin: 0;
+        position: relative;
+      }
+
+      #tora img {
+        width: 100%;
+        margin-bottom: 4px;
+      }
+
+      #tora figcaption {
+        width: 100%;
+        color: #fff;
+        text-align: center;
+        text-shadow: 1px 1px 0 #000;
+        font-size: 1.2em;
+        position: absolute;
+        bottom: 12px;
+      }
+
+      #welcome {
+        width: 100%;
+        color: #fff;
+        text-align: center;
+        font-family: serif;
+        font-size: 1.2em;
+        margin-bottom: 2px;
+        animation: blink steps(1, end) 0.2s infinite;
       }
 
       @keyframes blink {
         0% {
-          color: #f00;
-          background: #ff0;
-        }
-        49% {
-          color: #f00;
-          background: #ff0;
+          color: #fff;
         }
         50% {
-          color: #ff0;
-          background: #f00;
-        }
-        100% {
-          color: #ff0;
-          background: #f00;
+          color: #000;
         }
       }
 
-      #link-list {
+      #place {
+        height: calc(1.1em * 3 + 20px * 2);
+        line-height: 1.1;
+        text-align: center;
+        font-size: 1.8em;
+        word-break: keep-all;
+        margin: 24px 0 16px 0;
+        padding: 8px;
+        border: outset 20px #c90;
+        box-sizing: border-box;
+        background: gold;
+        position: relative;
+        animation: borderwidth steps(1, end) 0.5s infinite;
+      }
+
+      @keyframes borderwidth {
+        0% {
+          border-width: 20px;
+        }
+        50% {
+          border-width: 10px;
+        }
+      }
+
+      #place .orange {
+        color: orange;
+      }
+
+      #place .black {
+        animation: blink2 steps(1, end) 0.2s infinite;
+      }
+
+      @keyframes blink2 {
+        0% {
+          color: white;
+        }
+        33% {
+          color: black;
+        }
+        66% {
+          color: red;
+        }
+      }
+
+      #place .front, #place .back {
+        display: block;
+        position: absolute;
+        animation: placeposition steps(1, end) 0.5s infinite;
+      }
+
+      #place .front {
+        width: 100%;
+        color: yellow;
+        z-index: 1;
+      }
+
+      #place .back {
+        width: 100%;
+        -webkit-text-stroke: 6px #000;
+      }
+
+      @keyframes placeposition {
+        0% {
+          top: 0px;
+        }
+        50% {
+          top: 10px;
+        }
+      }
+
+      #banners {
+        margin-bottom: 16px;
         display: flex;
-        gap: 4px;
+        gap: 16px;
+      }
+
+      #proceeds {
+        padding: 8px;
+        border: double 4px cyan;
+      }
+
+      #poster {
+        color: pink;
+        text-shadow: 2px 2px #000;
+        font-size: 1.6em;
+        background: linear-gradient(40deg, cyan, blue);
+        display: flex;
+        flex-grow: 1;
         justify-content: center;
+        align-items: center;
       }
 
-      #link-list li {
+      #poster.disabled {
+        color: #999;
+        font-size: 1.4em;
+        background: rgba(102, 102, 102, 0.4);
+      }
+
+      #outer-links {
+        display: flex;
+        gap: 16px;
+      }
+
+      #outer-links a {
+        color: lime;
+        height: 48px;
+        line-height: 48px;
+        text-shadow: -2px 0 0 #000, 2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000;
+        text-align: center;
+        text-decoration: none;
+        font-size: 1.2em;
+        font-family: "JFドットAyu明朝18";
         list-style: none;
+        margin-bottom: 20px;
+        border-top-left-radius: 20px 32px;
+        border-top-right-radius: 20px 32px;
+        border-bottom-left-radius: 20px 32px;
+        border-bottom-right-radius: 20px 32px;
+        flex-grow: 1;
+        align-items: center;
+        border: solid 2px red;
+        box-shadow: 0 0 3px 3px red;
+        background: rgba(255, 0, 0, 0.4);
+        display: block;
       }
 
-      .link {
-        height: 32px;
-        line-height: 32px;
-        color: #ff0;
-        padding: 0 8px;
-        list-style: none;
-        border: inset 5px #f6c;
-        background: #f0c;
-        display: inline-block;
+      #outer-links a:hover {
+        box-shadow: 0 0 10px 3px red;
       }
 
-      .link:hover {
-        border: inset 5px #fff;
+      #grandprix {
+        text-align: center;
+        font-size: 24px;
+        padding: 12px 0;
+        border: outset 10px cyan;
+        display: block;
+        animation: seven steps(1, end) 1s infinite;
+      }
+
+      #grandprix .impact {
+        color: red;
+        text-shadow: 0 0 10px yellow, 0 0 20px yellow;
+      }
+
+      @keyframes seven {
+        0%   { border-color: red; }
+        15%  { border-color: orange; }
+        30%  { border-color: yellow; }
+        45%  { border-color: green; }
+        60%  { border-color: cyan; }
+        75% { border-color: blue; }
+        90% { border-color: purple; }
       }
 
       #copyright {
         color: #093;
       }
 
-      #enter {
-        width: 100vw;
-        height: 100vh;
-        font-size: 36px;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        position: fixed;
-        top: 0;
-        left: 0;
-        background: url("img/haikei.gif");
-      }
-
-      #enter h1 {
-        font-size: 36px;
-      }
-
-      #enter-link {
-        color: #00f;
-        text-decoration: underline;
-      }
-
-      #enter-link:hover {
-        color: #f63;
-      }
     </style>
-    <script>
-      window.addEventListener("load", () => {
-        const audio = document.createElement("audio");
-        audio.src = "img/bgm.mp3";
-        audio.loop = true;
-        document.body.appendChild(audio);
-
-        const enter = document.getElementById("enter");
-        enter.addEventListener("click", () => {
-          enter.remove();
-          audio.play();
-        });
-      });
-    </script>
   </head>
   <body>
-    <!-- ナビゲーション ここから -->
-    <nav id="nav"></nav>
-    <!-- ナビゲーション ここまで -->
-    <!-- メインここから -->
-    <main>
-      <header>
-        <h1>Welcome to 驚額の殿堂</h1>
-        <p id="access-counter">
-          あなたは
-          <!-- アクセスカウンターここから -->
-          <a href="https://renbai-counter.yokohama.dev/counter">
-            <span id="access-counter-no">
-            </span>
-          </a>
-          <!-- アクセスカウンターここまで -->
-          番目の来訪者です。キリ番踏み逃げ禁止！
-          <a href="https://itest.5ch.net/">
-            <img src="img/index/bbs.gif" height="24px" alt="掲示板"/>
-          </a>
-        </p>
-        <p>Since 2023/10/10</p>
-        <div id="marquee">
-          <p class="text">推奨環境は Internet Exproler です。ツールバーを非表示にしてお楽しみください。</p>
+    <div id="wrapper">
+      <!-- ヘッダここから -->
+      <header id="header">
+        <h1>驚額の殿堂</h1>
+        <div>
+          <p style="color: red;">やきそばマイスター Since 2023/10/10 –
+            <a href="index2.html" id="plane">プレーン テキスト</a>
+          </p>
+          <p id="access-counter">
+            あなたは
+            <!-- アクセスカウンターここから -->
+            <a href="https://renbai-counter.yokohama.dev/counter">
+              <span id="access-counter-no">
+              </span>
+            </a>
+            <!-- アクセスカウンターここまで -->
+            人目の迷える子羊様です。キリ番踏み逃げ禁止！
+          </p>
         </div>
       </header>
-      <section id="main">
-        <p id="place">
-          <strong>
-            第４９回<wbr />
-            筑波大学学園祭<wbr />
-            「雙峰祭」<wbr />
-            石の広場・<wbr />
+      <!-- ヘッダここまで -->
+
+      <div id="marquee">
+        <p class="text">推奨する Browser は Microsoft Internet Exproler (Ver 6.0) で，全画面表示とするのが至適のようです．Home Page を Cloudflare で作成しました．その関係で，Netscape とは相性が悪く Version によっては全く受け付けないモノもあるようです．</p>
+      </div>
+
+      <!-- メインここから -->
+      <main id="main">
+        <div id="top">
+          <figure id="figure">
+            <img src="img/index/npotaso.gif" alt="鉄板で焼かれるフランクフルト" />
+            <div class="sub">第５０回</div>
+            <div class="main">筑波大学<br />学園祭<br/>｢雙峰祭｣</div>
+          </figure>
+          <nav id="links">
+            <a class="disabled">原価</a>
+            <a href="https://kyogaku-bbs.utopi-a.dev">BBS</a>
+            <a href="https://teriyaki.itsu.dev">企画検索</a>
+            <a class="disabled">ギャラリ<br />ー</a>
+            <a href="/2023">昨年の<br />ページ</a>
+          </nav>
+          <section id="sub">
+            <figure id="tora">
+              <img src="img/index/tora.gif" alt="寅の画像" />
+              <figcaption>Welcome！</figcaption>
+            </figure>
+            <div id="welcome">心から歓迎！</div>
+            https://kyogaku.yokohama.dev
+          </section>
+        </div>
+        <div id="place">
+          <strong class="front">            
+            <span class="orange">石の広場</span>・<wbr />
             人文社会学系棟前で販売！<br/>
-          <del>２０２３年１１月４日（土）・５日（日）</del>
-          </strong><br/>
-          <strong>無事完売いたしました！来年またお会いしましょう！！</strong>          
-        </p>
-        <p>
-          <a href="photo.html">当日の写真</a> –
-          <a href="https://twitter.com/intent/tweet?text=Welcome%20to%20%E9%A9%9A%E9%A1%8D%E3%81%AE%E6%AE%BF%E5%A0%82" target="_blank">
-            このサイトをツイートする
+            ２０２４年１１月３日（日）・４日（月）<br/>
+            <span class="black">フランクフルト １本１００円</span>
+          </strong>
+          <strong class="back">
+            石の広場・<wbr />
+            <span class="black">人文社会学系棟前</span>で販売！<br/>
+            ２０２４年１１月３日（日）・４日（月）<br/>
+            フランクフルト １本１００円
+          </strong>
+        </div>
+        <div id="banners">
+          <div id="proceeds">
+            今年も損益分岐点＆現在の売上を<strong>リアルタイムで公開</strong>します
+          </div>
+          <a id="poster" class="disabled">
+            <div>ポスター（工事中）</div>
           </a>
-        </p>
-        <p id="grandprix">
-          <span style="color: red;">★★★★</span><!--
-          --><span style="color: orange;">★★★</span><!--
-          --><span style="color: yellow;">★★★</span><!--
-          --><span style="color: #00ff00;">★★★</span><!--
-          --><span style="color: green;">★★★</span><!--
-          --><span style="color: deepskyblue;">★★★</span><!--
-          --><span style="color: blue;">★★★</span><!--
-          --><span style="color: purple;">★★★</span><br/>
-          </span>
-          <span style="color: red;">★</span>
-          雙峰祭グランプリは「<strong>驚額の殿堂</strong>」に投票お願いします
-          <span style="color: purple;">★</span><br/>
-          <span style="color: red;">★★★★</span><!--
-          --><span style="color: orange;">★★★</span><!--
-          --><span style="color: yellow;">★★★</span><!--
-          --><span style="color: #00ff00;">★★★</span><!--
-          --><span style="color: green;">★★★</span><!--
-          --><span style="color: deepskyblue;">★★★</span><!--
-          --><span style="color: blue;">★★★</span><!--
-          --><span style="color: purple;">★★★</span><br/>
-          →→ <a href="https://docs.google.com/forms/d/1kuEsSTcKNZp_XqP780ICou8wN_m9rPA1IWpXYZgUdic/viewform?edit_requested=true">投票はこちら！</a> ←←
-        </p>
-      </section>
-      <section id="menu">
-        <h2 id="menu-head"><img src="img/index/menu.gif" alt="メニュー" /></h2>
-        <p id="price">
-          <strong>やきそば １５０円</strong><br/>
-        </p>
-        <p><a href="genka.html">↑↑↑ ★原価を公開しました★</a></p>
-        <figure>
-          <img src="img/index/yakisoba.gif" alt="鉄板で焼かれるやきそば" />
-        </figure>
-      </section>
-      <section id="links">
-        <h2>リンク集</h2>
-        <ul id="link-list">
-          <li><a href="https://twitter.com/kyogaku_dendo/" class="link">Twitter</a></li>
-          <li><a href="https://www.instagram.com/kyogaku_dendo/" class="link">Instagram</a></li>
-          <li><a href="https://www.tsukuba.ac.jp/" class="link">筑波大学</a></li>
-          <li><a href="https://sohosai.com/" class="link">雙峰祭</a></li>
-        </ul>
-      </section>
-      <footer>
-        <small id="copyright">
-          ★★無断リンクは禁止です★★相互リンク募集中★★
-        </small>
-        <p>やきそばマイスター – <a href="https://yahoo.jp/">EXIT</a></p>        
+        </div>
+        <nav id="outer-links">
+          <a href="https://twitter.com/kyogaku_dendo/" class="link">Twitter</a>
+          <a href="https://www.instagram.com/kyogaku_dendo/" class="link">Instagram</a>
+          <a href="https://sohosai.com/" class="link">雙峰祭</a>
+          <a href="https://www.tsukuba.ac.jp/" class="link">筑波大学</a>
+        </nav>
+        <div id="grandprix">
+          <span class="char">雙</span><!--
+          --><span class="char">峰</span><!--
+          --><span class="char">祭</span><!--
+          --><span class="char">グ</span><!--
+          --><span class="char">ラ</span><!--
+          --><span class="char">ン</span><!--
+          --><span class="char">プ</span><!--
+          --><span class="char">リ</span><!--
+          --><span class="char">は</span><!--
+          --><span class="char">「</span><!--
+          --><strong><!--
+            --><span class="char">驚</span><!--
+            --><span class="char">額</span><!--
+            --><span class="char">の</span><!--
+            --><span class="char">殿</span><!--
+            --><span class="char">堂</span><!--
+            --><span class="char">2</span><!--
+            --><span class="char">（</span><!--
+            --><span class="char">ツ</span><!--
+            --><span class="char">ー</span><!--
+            --><span class="char">）</span><!--
+          --></strong><!--
+          --><span class="char">」</span><!--
+          --><span class="char">に</span><!--
+          --><span class="char">投</span><!--
+          --><span class="char">票</span><!--
+          --><span class="char">お</span><!--
+          --><span class="char">願</span><!--
+          --><span class="char">い</span><!--
+          --><span class="char">し</span><!--
+          --><span class="char">ま</span><!--
+          --><span class="char">す</span>
+        </div>        
+      </main>
+      <!-- メインここまで -->
+      
+      <!-- フッタここから -->
+      <footer id="footer">
+        Copyright (C) 2024 驚額の殿堂
       </footer>
-    </main>
-    <div id="enter">
-      <h1><i>Welcome to 驚額の殿堂</i></h1>
-      <p><i><a class="link" style="padding: 8px">ENTER</a></i></p>
+      <!-- フッタここまで -->
     </div>
   </body>
 </html>
