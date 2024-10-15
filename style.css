@@ -1,32 +1,57 @@
-* {
-  font-family: "ＭＳ Ｐゴシック", "Osaka", sans-serif;
-  line-height: 1;
+@font-face {
+  font-family: "JFドットAyu明朝18";
+  src: url("JF-Dot-AyuMin18.ttf");
 }
 
 html, body {
   width: 100%;
+  color: #fff;
+  line-height: 1;
+  font-family: "ＭＳ Ｐゴシック", "Osaka", sans-serif;
   margin: 0;
   background: url("img/haikei.gif");
   background-size: 40px;
   display: flex;
+  background: #000;
 }
 
-#nav {
-  width: 280px;
-  height: 100vh;
-  border: inset 5px #ccc;
-  box-sizing: border-box;
-  position: fixed;
+a {
+  cursor: pointer;
 }
 
-main {
-  text-align: center;
-  margin: 8px 0 8px 280px;
-  flex-grow: 1;
+h1 {
+  margin: 0;
 }
 
 p {
   margin: 4px;
+}
+
+#wrapper {
+  width: 700px;
+  margin: auto;
+  padding: 24px 0;
+  overflow: hidden;
+}
+
+#header {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+#plane {
+  color: blue;
+}
+
+#access-counter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#access-counter-no {
+  margin: 0 4px;
 }
 
 @media screen and (max-width: 900px) {
@@ -36,5 +61,21 @@ p {
 
   main {
     margin-left: 0;
+  }
+}
+
+#footer {
+  color: yellow;
+  text-align: left;
+  margin-top: 16px;
+  animation: footer-marquee 5s linear infinite;
+}
+
+@keyframes footer-marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(calc(100% - 210px));
   }
 }

@@ -1,0 +1,257 @@
+
+<!doctype html>
+<html>
+  <head>
+    <title>Welcome to 驚額の殿堂</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="人間系学系棟前の石の広場で、圧倒的な低価格で美味しい焼きそばを提供します！" />
+    <meta name="keywords" content="雙峰祭, やきそば, 驚額の殿堂">
+    <link href="./style.css" rel="stylesheet">
+    <script src="./script.js"></script>
+    <style>
+      #marquee {
+        overflow: hidden;
+      }
+
+      #marquee .text {
+        transform: translateX(100%);
+        animation: marquee 20s linear infinite;
+      }
+
+      @keyframes marquee {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+
+      #access-counter {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #access-counter-no {
+        margin: 0 4px;
+      }
+
+      #menu-head {
+        margin-bottom: 8px;
+      }
+
+      #place {
+        line-height: 1.3;
+        color: #f00;
+        font-size: 24px;
+        font-style: italic;
+        word-break: keep-all;
+      }
+
+      #grandprix {
+        margin-top: 16px;
+        font-size: 20px;
+        display: block;
+      }
+
+      #price {
+        margin-bottom: 8px;
+      }
+
+      #price strong {
+        font-size: 36px;
+        display: inline-block;
+        animation: blink 1s infinite;
+      }
+
+      @keyframes blink {
+        0% {
+          color: #f00;
+          background: #ff0;
+        }
+        49% {
+          color: #f00;
+          background: #ff0;
+        }
+        50% {
+          color: #ff0;
+          background: #f00;
+        }
+        100% {
+          color: #ff0;
+          background: #f00;
+        }
+      }
+
+      #link-list {
+        display: flex;
+        gap: 4px;
+        justify-content: center;
+      }
+
+      #link-list li {
+        list-style: none;
+      }
+
+      .link {
+        height: 32px;
+        line-height: 32px;
+        color: #ff0;
+        padding: 0 8px;
+        list-style: none;
+        border: inset 5px #f6c;
+        background: #f0c;
+        display: inline-block;
+      }
+
+      .link:hover {
+        border: inset 5px #fff;
+      }
+
+      #copyright {
+        color: #093;
+      }
+
+      #enter {
+        width: 100vw;
+        height: 100vh;
+        font-size: 36px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: url("img/haikei.gif");
+      }
+
+      #enter h1 {
+        font-size: 36px;
+      }
+
+      #enter-link {
+        color: #00f;
+        text-decoration: underline;
+      }
+
+      #enter-link:hover {
+        color: #f63;
+      }
+    </style>
+    <script>
+      window.addEventListener("load", () => {
+        const audio = document.createElement("audio");
+        audio.src = "img/bgm.mp3";
+        audio.loop = true;
+        document.body.appendChild(audio);
+
+        const enter = document.getElementById("enter");
+        enter.addEventListener("click", () => {
+          enter.remove();
+          audio.play();
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <!-- ナビゲーション ここから -->
+    <nav id="nav"></nav>
+    <!-- ナビゲーション ここまで -->
+    <!-- メインここから -->
+    <main>
+      <header>
+        <h1>Welcome to 驚額の殿堂</h1>
+        <p id="access-counter">
+          あなたは
+          <!-- アクセスカウンターここから -->
+          <a href="https://renbai-counter.yokohama.dev/counter">
+            <span id="access-counter-no">
+            </span>
+          </a>
+          <!-- アクセスカウンターここまで -->
+          番目の来訪者です。キリ番踏み逃げ禁止！
+          <a href="https://itest.5ch.net/">
+            <img src="img/index/bbs.gif" height="24px" alt="掲示板"/>
+          </a>
+        </p>
+        <p>Since 2023/10/10</p>
+        <div id="marquee">
+          <p class="text">推奨環境は Internet Exproler です。ツールバーを非表示にしてお楽しみください。</p>
+        </div>
+      </header>
+      <section id="main">
+        <p id="place">
+          <strong>
+            第４９回<wbr />
+            筑波大学学園祭<wbr />
+            「雙峰祭」<wbr />
+            石の広場・<wbr />
+            人文社会学系棟前で販売！<br/>
+          <del>２０２３年１１月４日（土）・５日（日）</del>
+          </strong><br/>
+          <strong>無事完売いたしました！来年またお会いしましょう！！</strong>          
+        </p>
+        <p>
+          <a href="photo.html">当日の写真</a> –
+          <a href="https://twitter.com/intent/tweet?text=Welcome%20to%20%E9%A9%9A%E9%A1%8D%E3%81%AE%E6%AE%BF%E5%A0%82" target="_blank">
+            このサイトをツイートする
+          </a>
+        </p>
+        <p id="grandprix">
+          <span style="color: red;">★★★★</span><!--
+          --><span style="color: orange;">★★★</span><!--
+          --><span style="color: yellow;">★★★</span><!--
+          --><span style="color: #00ff00;">★★★</span><!--
+          --><span style="color: green;">★★★</span><!--
+          --><span style="color: deepskyblue;">★★★</span><!--
+          --><span style="color: blue;">★★★</span><!--
+          --><span style="color: purple;">★★★</span><br/>
+          </span>
+          <span style="color: red;">★</span>
+          雙峰祭グランプリは「<strong>驚額の殿堂</strong>」に投票お願いします
+          <span style="color: purple;">★</span><br/>
+          <span style="color: red;">★★★★</span><!--
+          --><span style="color: orange;">★★★</span><!--
+          --><span style="color: yellow;">★★★</span><!--
+          --><span style="color: #00ff00;">★★★</span><!--
+          --><span style="color: green;">★★★</span><!--
+          --><span style="color: deepskyblue;">★★★</span><!--
+          --><span style="color: blue;">★★★</span><!--
+          --><span style="color: purple;">★★★</span><br/>
+          →→ <a href="https://docs.google.com/forms/d/1kuEsSTcKNZp_XqP780ICou8wN_m9rPA1IWpXYZgUdic/viewform?edit_requested=true">投票はこちら！</a> ←←
+        </p>
+      </section>
+      <section id="menu">
+        <h2 id="menu-head"><img src="img/index/menu.gif" alt="メニュー" /></h2>
+        <p id="price">
+          <strong>やきそば １５０円</strong><br/>
+        </p>
+        <p><a href="genka.html">↑↑↑ ★原価を公開しました★</a></p>
+        <figure>
+          <img src="img/index/yakisoba.gif" alt="鉄板で焼かれるやきそば" />
+        </figure>
+      </section>
+      <section id="links">
+        <h2>リンク集</h2>
+        <ul id="link-list">
+          <li><a href="https://twitter.com/kyogaku_dendo/" class="link">Twitter</a></li>
+          <li><a href="https://www.instagram.com/kyogaku_dendo/" class="link">Instagram</a></li>
+          <li><a href="https://www.tsukuba.ac.jp/" class="link">筑波大学</a></li>
+          <li><a href="https://sohosai.com/" class="link">雙峰祭</a></li>
+        </ul>
+      </section>
+      <footer>
+        <small id="copyright">
+          ★★無断リンクは禁止です★★相互リンク募集中★★
+        </small>
+        <p>やきそばマイスター – <a href="https://yahoo.jp/">EXIT</a></p>        
+      </footer>
+    </main>
+    <div id="enter">
+      <h1><i>Welcome to 驚額の殿堂</i></h1>
+      <p><i><a class="link" style="padding: 8px">ENTER</a></i></p>
+    </div>
+  </body>
+</html>

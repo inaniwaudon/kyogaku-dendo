@@ -1,0 +1,40 @@
+* {
+  font-family: "ＭＳ Ｐゴシック", "Osaka", sans-serif;
+  line-height: 1;
+}
+
+html, body {
+  width: 100%;
+  margin: 0;
+  background: url("img/haikei.gif");
+  background-size: 40px;
+  display: flex;
+}
+
+#nav {
+  width: 280px;
+  height: 100vh;
+  border: inset 5px #ccc;
+  box-sizing: border-box;
+  position: fixed;
+}
+
+main {
+  text-align: center;
+  margin: 8px 0 8px 280px;
+  flex-grow: 1;
+}
+
+p {
+  margin: 4px;
+}
+
+@media screen and (max-width: 900px) {
+  #nav {
+    display: none;
+  }
+
+  main {
+    margin-left: 0;
+  }
+}
