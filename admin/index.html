@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>売上登録</title>
+    <meta charset="utf-8 "/>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link href="index.css" rel="stylesheet" />
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <main>
+      <p>売上登録 <time id="now"></time></p>
+      <p id="token-unregistered">トークンが未登録です</p>
+      <div class="box">
+        <label for="price">金額</label>
+        <input type="number" value="100" min="0" id="price" /><br/>
+      </div>
+      <div class="button-box box">
+        <div>
+          <button class="sub-button" onclick="setPrice(100)">通常</button>
+          <button class="sub-button" onclick="setPrice(-100)">打ち消し</button>
+          <button class="sub-button" onclick="setPrice(0)">無料</button>
+        </div>
+      </div>
+      <div class="box">
+        <label for="count">フランクフルト本数</label>
+        <input type="number" value="1" min="0" id="frank-count" />
+      </div>
+      <div class="button-box box">
+        <div>
+          <button class="no-button" onclick="setFrankCount(1)">1 本</button>
+          <button class="no-button" onclick="setFrankCount(2)">2 本</button>
+          <button class="no-button" onclick="setFrankCount(3)">3 本</button>
+          <button class="no-button" onclick="setFrankCount(4)">4 本</button>
+          <button class="no-button" onclick="setFrankCount(5)">5 本</button>
+        </div>
+        <div>
+          <button class="no-button" onclick="setFrankCount(6)">6 本</button>
+          <button class="no-button" onclick="setFrankCount(7)">7 本</button>
+          <button class="no-button" onclick="setFrankCount(8)">8 本</button>
+          <button class="no-button" onclick="setFrankCount(9)">9 本</button>
+          <button class="no-button" onclick="setFrankCount(10)">10 本</button>
+          <button class="no-button" onclick="setFrankCount(0)">なし</button>
+        </div>
+      </div>
+      <div class="box">
+        <label for="count">飲料本数</label>
+        <input type="number" value="0" min="0" id="drink-count" />
+      </div>
+      <div class="button-box box">
+        <div>
+          <button class="no-button" onclick="setDrinkCount(1)">1 本</button>
+          <button class="no-button" onclick="setDrinkCount(2)">2 本</button>
+          <button class="no-button" onclick="setDrinkCount(3)">3 本</button>
+          <button class="no-button" onclick="setDrinkCount(4)">4 本</button>
+          <button class="no-button" onclick="setDrinkCount(5)">5 本</button>
+        </div>
+        <div>
+          <button class="no-button" onclick="setDrinkCount(6)">6 本</button>
+          <button class="no-button" onclick="setDrinkCount(7)">7 本</button>
+          <button class="no-button" onclick="setDrinkCount(8)">8 本</button>
+          <button class="no-button" onclick="setDrinkCount(9)">9 本</button>
+          <button class="no-button" onclick="setDrinkCount(10)">10 本</button>
+          <button class="no-button" onclick="setDrinkCount(0)">なし</button>
+        </div>
+      </div>
+      <div class="box">
+        <label for="memo">メモ（あれば）</label><br/>
+        <textarea id="memo"></textarea>
+      </div>
+      <div class="box">
+        <input type="button" value="送信（連打禁止）" id="submit" />
+      </div>
+      <div class="box">
+        <textarea readonly id="status"></textarea>
+      </div>
+    </main>
+  </body>
+</html>

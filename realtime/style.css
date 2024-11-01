@@ -1,0 +1,29 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #ffcc53;
+}
+
+header {
+  padding: 8px;
+  border-bottom: solid 1px #037;
+  display: flex;
+  gap: 8px;
+}
+
+header a {
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 4px;
+  text-decoration: none;
+  background: #037;
+}
+
+#wrapper {
+  width: 100vw;
+}
+
+.img {
+  max-width: 100%;
+  height: auto;
+}
