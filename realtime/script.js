@@ -10,6 +10,7 @@ const loadImage = (src) =>
   new Promise((resolve) => {
     const image = new Image();
     image.src = src;
+    image.setAttribute("crossorigin", "anonymous");
     image.onload = () => {
       resolve(image);
     };
@@ -222,7 +223,7 @@ const update = async () => {
 
   // Twitter リンク更新
   const twitterLink = document.getElementById("twitter");
-  const tweet = `驚額の殿堂2（ツー）リアルタイム売上監視システム\n現在フランクフルトが ${current} 杯売れています\nhttps://kyogaku.yokohama.dev/realtime`;
+  const tweet = `驚額の殿堂2（ツー）リアルタイム売上システム\n現在フランクフルトが ${current} 本売れています\nhttps://kyogaku.yokohama.dev/realtime`;
   twitterLink.href = encodeURI(
     `https://twitter.com/intent/tweet?text=${tweet}`
   );
@@ -291,3 +292,13 @@ window.addEventListener("load", async () => {
     setInterval(update, 1000 * interval);
   }
 });
+
+const openImage = () => {
+  const canvas = document.getElementById("graph-canvas");
+  canvas.toBlob((blob) => {
+    const anchor = document.createElement("a");
+    anchor.href = URL.createObjectURL(blob);
+    anchor.click();
+    URL.revokeObjectURL(link.href);
+  });
+};
