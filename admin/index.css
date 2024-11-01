@@ -1,0 +1,70 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    margin: 8px 32px;
+}
+
+#token-unregistered {
+    color: #c00;
+    font-weight: bold;
+    display: none;
+}
+
+.box {
+    margin-top: 16px;
+}
+
+label, input, textarea#memo {
+    font-size: 1.6rem;
+}
+
+input[type="number"], textarea {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input[type="number"], textarea#memo {
+    padding: 8px;
+}
+
+.button-box {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.button-box div {
+    display: flex;
+    gap: 8px;
+}
+
+.sub-button, .no-button {
+    padding: 4px 8px;
+    border: none;
+    border-radius: 4px;
+    background: #ccc;
+}
+
+.no-button {
+    width: 4em;
+}
+
+textarea#memo {
+    height: 2em;
+}
+
+#submit {
+    color: #fff;
+    padding: 4px 16px;
+    border: none;
+    border-radius: 4px;
+    background: #037;
+}
+
+textarea#status {
+    height: 10em;
+    border: none;
+}

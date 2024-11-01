@@ -285,8 +285,14 @@
       }
 
       #proceeds {
-        padding: 8px;
+        color: yellow;
+        font-size: 1.6em;
+        padding: 8px 16px;
         border: double 4px cyan;
+      }
+
+      #proceeds:hover {
+        text-decoration: none;
       }
 
       #poster {
@@ -298,6 +304,10 @@
         flex-grow: 1;
         justify-content: center;
         align-items: center;
+      }
+
+      #poster:hover {
+        text-decoration: none;
       }
 
       #poster.disabled {
@@ -476,9 +486,9 @@
           </strong>
         </div>
         <div id="banners">
-          <div id="proceeds">
-            今年も損益分岐点＆現在の売上を<strong>リアルタイムで公開</strong>します
-          </div>
+          <a href="./realtime" id="proceeds">
+            <strong>現在の売上 & 損益分岐点をみる</strong>
+          </a>
           <a href="./poster.html" id="poster">
             <div>ポスター</div>
           </a>
