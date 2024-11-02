@@ -159,7 +159,7 @@ const drawImage = async (current, left, ratio) => {
     const thousandX = hundredX - thousandImage.naturalWidth * scale + 280;
 
     // 1000 の位
-    if (thousand > 1) {
+    if (thousand > 0) {
       context.drawImage(
         thousandImage,
         thousandX,
