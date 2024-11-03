@@ -170,7 +170,7 @@ const drawImage = async (current, left, ratio) => {
     }
 
     // 100 の位
-    if (hundred > 0) {
+    if (hundred >= 0) {
       context.drawImage(
         hundredImage,
         hundredX,
