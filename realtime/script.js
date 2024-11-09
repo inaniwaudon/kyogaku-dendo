@@ -181,7 +181,7 @@ const drawImage = async (current, left, ratio) => {
     }
 
     // 10 の位
-    if (hundred > 0 || ten > 0) {
+    if (ten >= 0) {
       context.drawImage(
         tenImage,
         tenX,
